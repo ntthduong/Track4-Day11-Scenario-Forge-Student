@@ -1,0 +1,45 @@
+{
+  "mssv": "2A202602905",
+  "town": "B",
+  "seeds": {
+    "mc": 4182262453,
+    "search": 1091651144,
+    "test": 1655211456
+  },
+  "quick": false,
+  "salted": false,
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.5.4",
+    "node": "v24.19.0"
+  },
+  "all_budget_checks": true,
+  "policy_selected_from_train": true,
+  "hazard_valid": true,
+  "exact_scene_reproduced": true,
+  "accepted": 0.992,
+  "protected_files_unchanged": [
+    "avsim/__init__.py",
+    "avsim/core.py",
+    "avsim/space.py",
+    "avsim/studio.py",
+    "avsim/viewer.py",
+    "policy_candidates.json",
+    "run_all.py",
+    "tests/js_dump.js",
+    "tests/test_parity.py",
+    "tests/test_todos.py",
+    "viewer/app.js",
+    "viewer/index.html",
+    "viewer/lab-sample.js",
+    "viewer/sim-core.js",
+    "viewer/vendor/three.min.js"
+  ],
+  "tests_command": "C:\\folders\\AI20K\\Track4-Day11-Scenario-Forge-Student\\.venv\\Scripts\\python.exe -m pytest -q",
+  "tests_passed": 44,
+  "test_output": "test-results.txt",
+  "evidence_hashes": "manifest.json",
+  "real_world_exposure": "not measured; exposure=1 is the controlled test protocol",
+  "grading_note": "Public and extra tests passed; hidden grader and final grade are external.",
+  "hash_convention": "SHA-256; JSON/TXT CRLF normalized to LF, binary files unchanged"
+}

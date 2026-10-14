@@ -1,0 +1,18 @@
+{
+  "format": "avsim-studio/1",
+  "params": {"cutT0": 6.5, "cutDur": 4, "cutV": 15, "pedT0": 11, "pedV": 1.45, "busGo": 17, "cutDs": -4, "tgT": 0.9, "mu": 0.8, "cutGap": 12, "cutBrake": 0, "pedGap": 4.5, "pedLook": 1, "civil": true},
+  "policy": {},
+  "hazards": [{"x": 65, "lane": "E2", "d": 0.7, "v": 5.5, "swerve": 3.4, "swDur": 2.7, "t0": 0, "trig": 12, "type": "bike"}],
+  "ego": "planner",
+  "world": "town",
+  "space": {
+    "h0_x": [45, 85],
+    "h0_d": [0.5, 0.9],
+    "h0_v": [4.8, 6.0],
+    "h0_swerve": [3.2, 3.6],
+    "h0_swDur": [2.6, 3.0],
+    "h0_trig": [10, 14]
+  },
+  "exposure": 1.0,
+  "why": "Controlled test-route protocol, not an observed real-world frequency: install exactly one H0 bicycle on every simulated trip, hence exposure=1 encounter/trip by construction. The resulting per_trip is for this deliberately exposed test route ONLY; real-town exposure is unknown and must be measured before extrapolation. The chapter-10 scene was built with x=65 m, d=0.7 m, v=5.5 m/s, swerve=3.4 m, swDur=2.7 s and trig=12 m. A separate design sweep (tools/explore_hazard.py; no TEST data) checked x=25,45,65,85,105 and trig=12,18,24,30,36: avoidable bicycle contacts occurred at x=45,65,85 with trig=12, motivating the declared local stress envelope. x in [45,85] is a +/-20 m placement tolerance around that scene, not a fitted distribution. v in [4.8,6] m/s equals [17.28,21.6] km/h, inside NACTO's typical 16-24 km/h design-speed band (https://nacto.org/publication/urban-bikeway-design-guide/designing-bikeways-for-all-ages-and-abilities/design-controls-for-bicycle-facilities/). The lane centres are z=5.25 and 1.75 m in avsim/core.py, 3.5 m apart. d in [0.5,0.9] and swerve in [3.2,3.6] put the final bicycle centre at z in [2.15,2.95], entering the ego's body corridor (combined half widths 0.95+0.35=1.30 m). This represents a full lateral move away from a curbside obstruction, not a tiny pothole wobble; the obstruction itself is not modelled. swDur in [2.6,3.0] caps peak lateral acceleration at pi^2*3.6/(2*2.6^2)=2.628 m/s^2, below the studio 3 m/s^2 limit and even wet-road mu*g=4.905. trig in [10,14] covers the local 12 m trigger, where relative closing speeds around 5-7 m/s allow about 1.4-2.8 s before longitudinal overlap, shorter than the complete lane move. Independent uniform draws are an explicit engineering stress-test design, not a claim about driver behaviour or measured priors. NHTSA advises reducing speed for road conditions and leaving cyclists space (https://www.nhtsa.gov/road-safety/bicycle-safety), supporting the hazard mechanism but not supplying its frequency."
+}
